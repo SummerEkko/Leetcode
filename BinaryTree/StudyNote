@@ -1,0 +1,20 @@
+1. 操作不在递归遍历内，而是在之外。
+之前一直有个困惑：根据题意自定义部分的code到底写在哪呢？感觉递归函数没什么操作的地方，写到别处又插入不到递归内。答案是：
+
+(1). 由于是递归，所以一定要在return的这个值上做文章。在return的内容上就文章，就可以把自定义部分的操作插入到整个遍历得到的结果里了
+
+(2). 经典DFS的内容，想操作每一步递归，就在递归函数内操作参数，如：
+
+// 二叉树遍历函数
+void traverse(TreeNode root, int level) {
+    if (root == null) {
+        return;
+    }
+    // 前序位置
+    printf("节点 %s 在第 %d 层", root, level);
+    traverse(root.left, level + 1);
+    traverse(root.right, level + 1);
+}
+
+// 这样调用
+traverse(root, 1);
