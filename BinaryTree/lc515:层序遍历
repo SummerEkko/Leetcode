@@ -1,4 +1,5 @@
 https://leetcode.com/problems/find-largest-value-in-each-tree-row/  
-  
-  核心：由于每层和每层都加在一起了，所以不能向其他bfs一样直接pop空。为了区分开每层pop多少个，在bfs内部的开头，先get到当前queue有多少个元素，这就是这一层的个数，然后用for循环来pop这么多次，每次pop都添加左右，就OK了。  
+
+本题技巧也非常适用于BFS  
+核心：由于每层和每层都加在一起了，所以不能向其他bfs一样直接pop空。为了区分开每层pop多少个，在bfs内部的开头，先get到当前queue有多少个元素，这就是这一层的个数，然后用for循环来pop这么多次，每次pop都添加左右，就OK了。  
   
