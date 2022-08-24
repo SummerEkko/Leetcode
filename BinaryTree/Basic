@@ -39,3 +39,5 @@ int count(TreeNode root) {
 }  
 
 eg2: lc543  
+  
+3. 开头记得写个 if not root: return []类似的
