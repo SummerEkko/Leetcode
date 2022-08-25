@@ -40,4 +40,10 @@ int count(TreeNode root) {
 
 eg2: lc543  
   
-3. 开头记得写个 if not root: return []类似的
+3. 开头记得写个 if not root: return []类似的  
+二叉树解题的思维模式分两类：  
+  1、是否可以通过遍历一遍二叉树得到答案？如果可以，用一个 traverse 函数配合外部变量来实现，这叫「遍历」的思维模式。
+  2、是否可以定义一个递归函数，通过子问题（子树）的答案推导出原问题的答案？如果可以，写出这个递归函数的定义，并充分利用这个函数的返回值，这叫「分解问题」的思维模式。
+
+解释：1的终点是traverse 函数配合外部变量，参考https://leetcode.com/problems/diameter-of-binary-tree/  
+它就是借助了一个外部变量maxDiam，在每次traverse的时候对maxDiam的值进行修改，最终得到答案。  
