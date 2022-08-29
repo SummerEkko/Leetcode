@@ -1,0 +1,5 @@
+import collections
+d = collections.defaultdict(int)
+print(d[1]) 
+
+会输出0，即：collections.defaultdict(int)的默认值是0
