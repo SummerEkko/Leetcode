@@ -47,3 +47,7 @@ eg2: lc543
 
 解释：1的终点是traverse 函数配合外部变量，参考https://leetcode.com/problems/diameter-of-binary-tree/  
 它就是借助了一个外部变量maxDiam，在每次traverse的时候对maxDiam的值进行修改，最终得到答案。  
+
+4. 遍历顺序：  
+先序：根左右  中序：左根右  后续：左右根  
+
