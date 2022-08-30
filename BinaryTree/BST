@@ -1,0 +1,4 @@
+https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/submissions/  
+
+1. BST用先序遍历构建  
+2. 结合二分法和递归，每次用list[mid]作为当前root，然后root.left = func(list,left,mid-1), right = func(list,mid+1,right)  
