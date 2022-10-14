@@ -1,0 +1,11 @@
+https://leetcode.com/problems/sum-of-two-integers/solution/  
+
+1. a+b:    
+暂时的和：x = (a XOR B)  
+进位：y = ((a AND b)<<1)  
+进位操作：while y: 重复进行这段操作
+
+2. a-b:  
+暂时的和：x = (a XOR B)  
+借位：y = ((~a AND b)<<1) 
+进位操作：while y: 重复进行这段操作
