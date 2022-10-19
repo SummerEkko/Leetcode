@@ -1,0 +1,2 @@
+heappush: heapq.heappush(h, x)  
+要注意的是，这个x不光可以是单个数值，还可以是一个tuple。当x为tuple时，根据x[0]的大小来push  
