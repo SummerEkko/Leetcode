@@ -1,0 +1,25 @@
+https://blog.csdn.net/Yzy_fulture/article/details/113069796  
+最简单的一类union find: 套入模板直接就能解决的，如LC990  
+复杂一些的，需要根据题意像并查集模板中添加一些自定义操作，如LC399  
+
+过程分五步：初始化，写find，写union，用union，用find。
+
+对比着LC990和LC399一起讲，自己去看答案：  
+S1: 初始化：  
+初始化是写一个集合，可以是list可以是dict，作用是：find的时候就来这里find，如典型的判断x == root[x]   
+如果像399不是很好初始化的话，初始化步骤就给个空的，然后在find的时候去先初始化当前node再进行find操作。 
+
+S2：写find函数：  
+        def find(x):
+            if x != root[x]:
+                root[x] = find(root[x])
+            return root[x]
+这个是最经典的，很多题直接这么写就够了。  
+原理是：如果这个初始化集合里没有cur_node，它的parent就是parent的parent，也就是去find它父辈（这个if部分就算是初始化的补充）；如果有了，就去寻找它的上一级是谁。  
+
+而399就比较复杂一些，因为逻辑上不能简单用root[i]=i来构造了，root[i]要等于别的，所以就要用这种字典的方法构造。  
+二者的区别是：990的初始list是有值的，所以find的时候如果x != root[x]，那他一定等于别的，直接往上一辈一辈find就完事了；而399的init_dict是空的，所以当node_id not in gid_weight时，说明它本身还没参与进来，这时要做的不是去往父辈找，而是给它赋初值。  
+然后第二步是取值，这两部是比990多出来的，990直接find就完事，但是399就是因为init_dict为空所以要先确保没参与的话先赋值，然后再取值。至此，取到值了，剩下就跟990一样了。  
+第三步，!=，往父辈找  
+第四步，return父辈  
+
